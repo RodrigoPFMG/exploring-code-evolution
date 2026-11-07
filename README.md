@@ -81,9 +81,16 @@ Seja criativo!
 
 Responda às questões abaixo diretamente neste arquivo `README.md` do seu fork:
 
-1. Repositório selecionado: <URL_DO_REPOSITORIO_SELECIONADO_AQUI>
-2. Gráfico selecionado: <IMAGEM_DO_GRAFICO_SELECIONADO_AQUI>
-3. Explicação: <EXPLICACAO_AQUI>
+1. Repositório selecionado: https://github.com/psf/requests
+2. Gráfico selecionado: ![Lines of code (LOC)](loc.png)
+3. Explicação:
 
+O gráfico mostra a evolução do número de linhas de código (LOC) do projeto Requests entre 2011 e 2026, com um snapshot por ano.
 
+**Crescimento (2011–2016).** O valor de 2011 é 0 porque o snapshot desse ano corresponde ao primeiro commit do projeto, que ainda não continha arquivos `.py`. A partir de 2012 (~5,8 mil linhas), o código cresce continuamente até ~19,6 mil linhas em 2016. Esse crescimento, porém, não era apenas código do próprio Requests: o projeto mantinha cópias de outras bibliotecas dentro de `requests/packages/`, prática conhecida como *vendoring*.
 
+**Pico e queda (2017–2018).** O snapshot de 2017 atinge ~32,8 mil linhas, mas cerca de 24,2 mil delas pertenciam às bibliotecas embutidas (`urllib3`, `chardet` e `idna`); o código próprio era de apenas ~8,6 mil linhas. Na versão 2.16.0 (26/05/2017), registrada no `HISTORY.md` como "Unvendor ALL the things!", essas cópias foram removidas e as bibliotecas passaram a ser dependências instaladas via pip. Por isso o LOC cai para ~9,4 mil em 2018. Nenhuma funcionalidade foi removida; apenas saiu do repositório o código que não era do projeto. A queda aparece em 2018, e não em 2017, porque o GitEvo analisa um commit do início de cada ano.
+
+**Estabilidade (2018–2026).** Após a remoção, o código cresce lentamente, de ~9,4 mil para ~11,3 mil linhas em oito anos, comportamento típico de um projeto maduro em fase de manutenção.
+
+**Conclusão.** O gráfico mostra que LOC, isoladamente, pode enganar: o pico de 2017 não indicava um Requests maior, e sim código de terceiros dentro dele. A remoção do *vendoring* foi uma boa prática, pois reduziu o tamanho do repositório e passou a responsabilidade de manter cada dependência ao seu próprio projeto. Correções de segurança no `urllib3`, por exemplo, chegam pelo pip sem que alguém precise copiar o código novamente para dentro do Requests.
