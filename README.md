@@ -83,6 +83,7 @@ Responda às questões abaixo diretamente neste arquivo `README.md` do seu fork:
 
 1. Repositório selecionado: https://github.com/psf/requests
 2. Gráfico selecionado:
+   
 ![Lines of code (LOC)](loc.png)
 4. Explicação:
 
