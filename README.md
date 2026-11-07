@@ -84,8 +84,8 @@ Responda às questões abaixo diretamente neste arquivo `README.md` do seu fork:
 1. Repositório selecionado: https://github.com/psf/requests
 2. Gráfico selecionado:
    
-![Lines of code (LOC)](loc.png)
-4. Explicação:
+![Lines of code (LOC)](loc.png)  
+3. Explicação:
 
 O gráfico mostra a evolução do número de linhas de código (LOC) do projeto Requests entre 2011 e 2026, com um snapshot por ano.
 
